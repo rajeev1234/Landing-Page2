@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="ProfileProjects-entry">
+
+        <h2>{{ object.ProfileProjects_Title }}</h2>
+        
+        <p>ProfileProjects Creator: {{ object.ProfileProjects_Author }}</p>
+
+        <p>ProfileProjects Created_Date:{{ object.ProfileProjects_Created_Date }}</p>
+
+        <p><span class="text-muted">ProfileProjects Color:</span>  {{ object.ProfileProjects_Production_House }}</p>
+
+        <p>ProfileProjects Category:{{ object.ProfileProjects_Category }}</p>
+
+        <p>ProfileProjects Style: {{ object.ProfileProjects_Director }}</p>
+
+
+    </div>
+
+    <!--    ProfileProjects Edit Delete button -->
+
+    <p>
+         <a href="{% url 'ProfileProjects_update' ProfileProjects.pk %}">Edit</a> |
+
+            <a href="{% url 'ProfileProjects_delete' ProfileProjects.pk %}">Delete</a>
+    </p>
+
+    <!--    # facebook like button -->
+
+    <div
+        class="fb-like"
+        data-share="true"
+        data-width="450"
+        data-show-faces="true">
+    </div>
+
+    <p>Back to <a href="{% url 'ProfileProjects_list' %}">All ProfileProjects</a>.</p>
+
+
+{% endblock content %}

@@ -1,0 +1,60 @@
+
+<!-- creating frame for page via base.html -->
+
+{% extends 'base.html' %}
+
+<!-- create title for actors_list.html -->
+
+{% block title %}actorss{% endblock %}
+
+{% block content %}
+
+    <!-- create list of actorss -->
+
+    {% for actors in object_list %}
+
+      <!-- create card deck for displaying actorss -->
+        <div class="card">
+
+        <div class="card-header">
+
+            <span class="font-weight-bold">{{ actors.Actor_id }}</span>
+            <span class="text-muted">{{ actors.Actor_Created_Date }}</span>
+
+        </div>
+
+
+        <!-- <div class="card-body">
+
+            <p>{{ actors.actors_Message }}</p>
+
+            <a href="{% url 'actors_edit' actors.pk %}">Edit</a> |
+
+            <a href="{% url 'actors_delete' actors.pk %}">Delete</a>
+
+        </div>
+
+        <div class="card-footer text-center text-muted">
+
+<!--             <!-- create list of comments of actorss -->
+            <!-- {% for comment in actors.comment_set.all %}
+
+                <p>
+
+                    <span class="font-weight-bold">{{ comment.actors_Comment_Author }} &middot;</span>
+                    {{ comment }}
+
+                </p> --> -->
+
+           <!--  {% endfor %}  -->-->
+
+        </div>
+
+
+    </div>
+
+      <br />
+
+    {% endfor %}
+
+{% endblock content %}

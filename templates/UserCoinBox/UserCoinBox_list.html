@@ -1,0 +1,60 @@
+
+<!-- creating frame for page via base.html -->
+
+{% extends 'base.html' %}
+
+<!-- create title for UserCoinBox_list.html -->
+
+{% block title %}UserCoinBox{% endblock %}
+
+{% block content %}
+
+    <!-- create list of UserCoinBox -->
+
+    {% for UserCoinBox in object_list %}
+
+      <!-- create card deck for displaying UserCoinBox -->
+        <div class="card">
+
+        <div class="card-header">
+
+            <span class="font-weight-bold">{{ UserCoinBox.UserCoinBox_Type }}</span>
+            <span class="text-muted">{{ UserCoinBox.UserCoinBox_Start_Date }}</span>
+
+        </div>
+
+
+        <div class="card-body">
+
+            <p>{{ UserCoinBox.UserCoinBox_Costume_List }}</p>
+
+            <a href="{% url 'UserCoinBox_update' UserCoinBox.pk %}">Edit</a> |
+
+            <a href="{% url 'UserCoinBox_delete' UserCoinBox.pk %}">Delete</a>
+
+        </div>
+
+        <div class="card-footer text-center text-muted">
+
+            <!-- create list of comments of UserCoinBox -->
+            {% for comment in UserCoinBox.comment_set.all %}
+
+                <p>
+
+                    <span class="font-weight-bold">{{ comment.UserCoinBox_Comment_Author }} &middot;</span>
+                    {{ comment }}
+
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+
+    </div>
+
+      <br />
+
+    {% endfor %}
+
+{% endblock content %}

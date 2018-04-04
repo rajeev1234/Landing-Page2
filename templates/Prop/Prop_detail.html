@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="Prop-entry">
+        <h2>Prop_ID : {{ object.Prop_ID }}</h2>
+        <p>Color : {{ object.Prop_Color }}</p>
+        <p>Daily_Rent : {{ object.Prop_Daily_Rent }}</p>
+        <p>Making_Year : {{ object.Prop_Making_Year }}</p>
+    <p>Ownership_Status : {{ object.Prop_Ownership_Status }}</p>
+
+    <p>Prop_Make : {{ object.Prop_Make }}</p>
+    <p>Prop_Type : {{ object.Prop_Type }}</p>
+    <p>Weekly_Rent : {{ object.Prop_Weekly_Rent }}</p>
+
+    </div>
+
+    <!--    Prop Edit Delete button -->
+
+    <p>
+        <a href="{% url 'Prop_edit' prop.pk %}">Edit</a> |
+
+        <a href="{% url 'Prop_delete' prop.pk %}">Delete</a>
+    </p>
+
+    <!--    # facebook like button -->
+
+    <div
+        class="fb-like"
+        data-share="true"
+        data-width="450"
+        data-show-faces="true">
+    </div>
+
+    <p>Back to <a href="{% url 'Prop_list' %}">All Messages</a>.</p>
+
+
+{% endblock content %}

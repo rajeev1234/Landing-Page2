@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="post-entry">
+
+        <p>UserCoinBox User ID : {{ object.UserCoinBox_Costume_List }}</p>
+        <p>UserCoinBox Amount  : {{ object.UserCoinBox_Location_List }}</p>
+        <p>UserCoinBox End Date : {{ object.UserCoinBox_Pet_List }}</p>
+        <p>UserCoinBox FOR FILM COIN : {{ object.UserCoinBox_Prop_List }}</p>
+        <p> UserCoinBox Location Allowed : {{ object.UserCoinBox_Vehicle_List }}</p>
+
+    </div>
+
+    <!--    UserCoinBox Edit Delete button -->
+
+    <p>
+        <a href="{% url 'UserCoinBox_update' UserCoinBox.pk %}">Edit</a> |
+
+        <a href="{% url 'UserCoinBox_delete' UserCoinBox.pk %}">Delete</a>
+    </p>
+
+    <!--    # facebook like button -->
+
+    <div
+        class="fb-like"
+        data-share="true"
+        data-width="450"
+        data-show-faces="true">
+    </div>
+
+    <p>Back to <a href="{% url 'UserCoinBox_list' %}">All Messages</a>.</p>
+
+
+{% endblock content %}

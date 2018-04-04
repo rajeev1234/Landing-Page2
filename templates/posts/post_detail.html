@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="post-entry">
+
+        <h2>{{ object.Post_Message }}</h2>
+        <p>Author: {{ object.Post_Author }}</p>
+        <p>{{ object.Created_Date }}</p>
+
+    </div>
+
+    <!--    Post Edit Delete button -->
+
+    <p>
+        <a href="{% url 'post_edit' post.pk %}">Edit</a> |
+
+        <a href="{% url 'post_delete' post.pk %}">Delete</a>
+    </p>
+
+    <!--    # facebook like button -->
+
+    <div
+        class="fb-like"
+        data-share="true"
+        data-width="450"
+        data-show-faces="true">
+    </div>
+
+    <p>Back to <a href="{% url 'post_list' %}">All Messages</a>.</p>
+
+
+{% endblock content %}

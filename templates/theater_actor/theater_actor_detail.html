@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="theater_actor-entry">
+
+
+        <h2>Author: {{ object.theater_actor_Author }}</h2>
+         <p>Body_Type:{{ object.Body_Type }}</p>
+        <p>Daily_Charges:{{ object.Daily_Charges }}</p>
+        <p>Description:{{ object.Description }}</p>
+        <p>Ethnicity:{{ object.Ethnicity }}</p>
+        <p>Favorite_Acting_Style:{{ object.Favorite_Acting_Style }}</p>
+        <p>Financial_Available:{{ object.Financial_Available }}</p>
+        <p>Height:{{ object.Height }}</p>
+        <p>Skin_Color:{{ object.Skin_Color }}</p>
+        <p>Special_Skills:{{ object.Special_Skills }}</p>
+        <p>Theater_Actor_ID:{{ object.Theater_Actor_ID }}</p>
+        <p>Weight:{{ object.Weight }}</p>
+        <p>theater_actor_Message:{{ object.theater_actor_Message }}</p>
+        <p>Created_Date:{{ object.Created_Date }}</p>
+
+    </div>
+
+    <!--    theater_actor Edit Delete button -->
+
+    <p>
+        <a href="{% url 'theater_actor_edit' theater_actor.pk %}">Edit</a> |
+
+        <a href="{% url 'theater_actor_delete' theater_actor.pk %}">Delete</a>
+    </p>
+
+    <!--    # facebook like button -->
+
+    <div
+        class="fb-like"
+        data-share="true"
+        data-width="450"
+        data-show-faces="true">
+    </div>
+
+    <p>Back to <a href="{% url 'theater_actor_list' %}">All Messages</a>.</p>
+
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="actors-entry">
+
+        <h2>Actor_Id:{{ object.Actor_Id }}</h2>
+        <p>Actor_Body_Type: {{ object.Actor_Body_Type }}</p>
+        <p>Actor_Description:{{ object.Actor_Description }}</p>
+        <p>Actor_Ethnicity: {{ object.Actor_Ethnicity }}</p>
+        <p>Actor_Eye_Color:{{ object.Actor_Eye_Color }}</p>
+        <p>Actor_Favorite_Acting_Styles: {{ object.Actor_Favorite_Acting_Styles }}</p>
+        <p>Actor_Height:{{ object.Actor_Height }}</p>
+        <p>Actor_Rates: {{ object.Actor_Rates }}</p>
+        <p>Actor_SceneComfort:{{ object.Actor_SceneComfort }}</p>
+        <p>ACTOR_Skin_Color: {{ object.Actor_Skin_Color }}</p>
+        <p>Actor_Smoker:{{ object.Actor_Smoker }}</p>
+        <p>Actor_Weight:{{ object.Actor_Weight }}</p>
+
+    </div>
+    
+
+        <a href="{% url 'actors_edit' actors.pk %}">Edit</a> |
+
+        <a href="{% url 'actors_delete' actors.pk %}">Delete</a>
+    </p>
+
+       # facebook like button
+
+    <div
+        class="fb-like"
+        data-share="true"
+        data-width="450"
+        data-show-faces="true">
+    </div>
+
+    <p>Back to <a href="{% url 'actors_list' %}">All Messages</a>.</p>
+
+
+{% endblock content %}
